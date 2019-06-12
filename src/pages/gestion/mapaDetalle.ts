@@ -1,9 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { IPageGestion } from 'interfaces/pagesGestion';
+import { IPageGestion } from '../../interfaces/pagesGestion';
 import { Principal } from './principal';
 import { DatosGestionProvider } from '../../providers/datos-gestion/datos-gestion.provider';
 import { PagesGestionProvider } from '../../providers/pageGestion';
+import { ListadoProfesionalesComponent } from './listadoProfesionales';
+import * as moment from 'moment';
+
 @Component({
     selector: 'mapa-detalle',
     templateUrl: 'mapaDetalle.html',
@@ -17,6 +20,7 @@ export class MapaDetalleComponent implements OnInit {
     public mapaSvg;
     public eje;
     public acciones;
+    @Input() public ultimaActualizacion;
 
     constructor(
         public datosGestion: DatosGestionProvider,
