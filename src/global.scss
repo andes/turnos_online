@@ -43,10 +43,29 @@
     ion-input,
     input {
         --highlight-color-focused: none;
+
+        &::placeholder {
+            color: var(--ion-color-medium);
+        }
+    }
+    ion-select {
+        &.outline {
+            border-radius: 25px;
+            border: solid 2px white;
+            box-shadow: none;
+            padding: 13px 25px;
+
+            &::placeholder {
+                color: var(--ion-color-medium);
+            }
+        }
+        ion-select-option {
+            color: var(--ion-color-primary-contrast);
+        }
     }
     ion-menu {
         ion-item {
-            --color-hover: (--ion-color-light);
+            --color-hover: var(--ion-color-light);
             color: #000;
             ion-label {
                 color: var(--ion-color-dark);
@@ -162,14 +181,13 @@
 
     ion-datetime::part(text) {
         color: (--ion-color-light);
+        &::placeholder {
+            color: var(--ion-color-medium);
+        }
     }
 
     ion-alert {
         --ion-text-color: var(--ion-color-medium);
-    }
-
-    ion-select {
-        color: var(--ion-color-primary-contrast);
     }
 
     ion-alert {
